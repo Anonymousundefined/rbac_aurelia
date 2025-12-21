@@ -1,0 +1,16 @@
+﻿{
+  "profiles": {
+    "server": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5000;https://localhost:5001",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Logging__LogLevel__Default": "Information",
+        "Logging__LogLevel__Microsoft": "Information",
+        "Logging__LogLevel__Microsoft.Hosting.Lifetime": "Information"
+      }
+    }
+  }
+}

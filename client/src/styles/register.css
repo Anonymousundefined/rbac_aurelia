@@ -1,0 +1,69 @@
+.register-wrapper {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  font-family: Arial, sans-serif;
+}
+
+.register-wrapper h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.register-wrapper input,
+.register-wrapper select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.register-wrapper input:focus,
+.register-wrapper select:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background-color: #4338ca;
+}
+
+.error-text {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.success-text {
+  color: green;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.login-link a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: bold;
+}

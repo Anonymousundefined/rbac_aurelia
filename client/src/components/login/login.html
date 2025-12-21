@@ -1,0 +1,27 @@
+<template>
+  <div class="login-container">
+    <h2>Login</h2>
+
+    <div class="login-field">
+      <label>Email</label>
+      <input type="email" value.bind="email" />
+    </div>
+
+    <div class="login-field">
+      <label>Password</label>
+      <input type="password" value.bind="password" />
+    </div>
+
+    <button class="login-button" click.trigger="login()">Login</button>
+
+    <div class="login-footer">
+      Don’t have an account?
+      <a route-href="route: register">Register</a>
+    </div>
+
+    <div if.bind="error" class="login-error">
+      ${error}
+    </div>
+  </div>
+</template>
+

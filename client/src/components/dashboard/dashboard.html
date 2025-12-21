@@ -1,0 +1,132 @@
+<template>
+  <div class="dashboard">
+    <div class="dashboard-header">
+      <h2>Dashboard</h2>
+      <button class="logout-btn" click.trigger="logout()">Logout</button>
+    </div>
+
+    <p>
+      Welcome <strong>${user.name}</strong>
+      (<strong>${user.role}</strong>)
+    </p>
+
+    <hr/>
+
+    <!-- client view -->
+    <div if.bind="user.role === 'Client'">
+      <h3 class="section-title">Available Policies</h3>
+
+      <div repeat.for="p of policies" class="policy-card">
+        <strong>${p.title}</strong>
+        <p>${p.description}</p>
+
+        <textarea
+          placeholder="Reason for applying"
+          value.bind="policyContents[p.id]">
+        </textarea>
+
+        <button click.trigger="apply(p.id)">Apply</button>
+      </div>
+
+      <h3 class="section-title">My Submissions</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Policy ID</th>
+            <th>Reason</th>
+            <th>Applied On</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr repeat.for="s of submissions">
+            <td>${s.policyId}</td>
+            <td>${s.content}</td>
+            <td>${formatDate(s.submittedAt)}</td>
+            <td>
+              <span
+                class.bind="
+                  s.status === 'Pending' ? 'status-pending' :
+                  s.status === 'Approved' ? 'status-approved' :
+                  'status-rejected'
+                ">
+                ${s.status}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!--Admin view-->
+    <div if.bind="user.role === 'Admin'">
+      <h3 class="section-title">All Submissions</h3>
+
+      <div class="filter-box">
+        <label>
+          Filter by Status:
+          <select value.bind="selectedStatus" change.trigger="applyFilter()">
+            <option value="All">All</option>
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+        </label>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>User Name</th>
+            <th>Policy ID</th>
+            <th>Applied On</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr repeat.for="s of submissions">
+            <td>${s.id}</td>
+            <td>${s.submittedByName}</td>
+            <td>${s.policyId}</td>
+            <td>${formatDate(s.submittedAt)}</td>
+            <td>
+              <span
+                class.bind="
+                  s.status === 'Pending' ? 'status-pending' :
+                  s.status === 'Approved' ? 'status-approved' :
+                  'status-rejected'
+                ">
+                ${s.status}
+              </span>
+            </td>
+
+            <td>
+              <div if.bind="s.status === 'Pending'">
+                <button
+                  class="action-btn approve-btn"
+                  click.trigger="approve(s.id)">
+                  Approve
+                </button>
+
+                <button
+                  class="action-btn reject-btn"
+                  click.trigger="reject(s.id)">
+                  Reject
+                </button>
+              </div>
+
+              <div if.bind="s.status !== 'Pending'">
+                <strong>Completed</strong>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>

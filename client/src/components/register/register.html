@@ -1,0 +1,38 @@
+
+<template>
+  <div class="register-wrapper">
+    <h2>Register</h2>
+
+    <div if.bind="error" class="error-text">
+      ${error}
+    </div>
+
+    <div if.bind="success" class="success-text">
+      ${success}
+    </div>
+
+    <input placeholder="Name" value.bind="name" />
+
+    <input placeholder="Username" value.bind="username" />
+
+    <input placeholder="Email" value.bind="email" />
+
+    <input type="password" placeholder="Password" value.bind="password" />
+
+    <input type="number" placeholder="Age" value.bind="age" />
+
+    <select value.bind="role">
+      <option value="Client">Client</option>
+      <option value="Admin">Admin</option>
+    </select>
+
+    <button class="register-btn" click.trigger="register()">
+      Register
+    </button>
+
+    <div class="login-link">
+      Already have an account?
+      <a href="#/login">Login</a>
+    </div>
+  </div>
+</template>

@@ -3,7 +3,7 @@ import { autoinject } from 'aurelia-framework';
 
 @autoinject
 export class ApiService {
-  private baseUrl = 'http://localhost:5000/api/';
+  private baseUrl = 'https://rbac-api-bbfdcge9b8hjazcu.centralindia-01.azurewebsites.net/api/';
   private token: string | null = null;
 
   constructor(private http: HttpClient) {

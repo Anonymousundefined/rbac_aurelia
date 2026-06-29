@@ -83,6 +83,7 @@
             <th>User Name</th>
             <th>Policy ID</th>
             <th>Applied On</th>
+            <th>content</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -94,6 +95,7 @@
             <td>${s.submittedByName}</td>
             <td>${s.policyId}</td>
             <td>${formatDate(s.submittedAt)}</td>
+             <td>${s.content}</td>
             <td>
               <span
                 class.bind="

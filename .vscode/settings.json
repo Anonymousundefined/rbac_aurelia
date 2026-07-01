@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/6df595dd-45c7-4bdb-bc6f-2d70bf3f4ce1/resourceGroups/RG-RBAC-Project/providers/Microsoft.Web/sites/rbac-api",
+    "appService.deploySubpath": "server\\bin\\Release\\net9.0\\publish"
+}

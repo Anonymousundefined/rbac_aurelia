@@ -138,3 +138,4 @@ C:\Users\Anmol Mishra\OneDrive - ADROSONIC IT Consultancy Services Pvt. Ltd\Desk
 C:\Users\Anmol Mishra\OneDrive - ADROSONIC IT Consultancy Services Pvt. Ltd\Desktop\aurelia_dashboard\server\bin\Debug\net9.0\server.pdb
 C:\Users\Anmol Mishra\OneDrive - ADROSONIC IT Consultancy Services Pvt. Ltd\Desktop\aurelia_dashboard\server\obj\Debug\net9.0\server.genruntimeconfig.cache
 C:\Users\Anmol Mishra\OneDrive - ADROSONIC IT Consultancy Services Pvt. Ltd\Desktop\aurelia_dashboard\server\obj\Debug\net9.0\ref\server.dll
+C:\Users\Anmol Mishra\OneDrive - ADROSONIC IT Consultancy Services Pvt. Ltd\Desktop\aurelia_dashboard\server\obj\Debug\net9.0\server.sourcelink.json

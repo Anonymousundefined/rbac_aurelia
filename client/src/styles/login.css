@@ -138,7 +138,8 @@
   border-radius: 18px;
   background: #eff6ff;
   color: var(--login-primary);
-  font-size: 24px;
+  font-size: 16px;
+  font-weight: 800;
 }
 
 .login-card-header .login-eyebrow {

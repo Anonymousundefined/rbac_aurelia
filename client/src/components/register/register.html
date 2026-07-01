@@ -1,38 +1,94 @@
 
 <template>
-  <div class="register-wrapper">
-    <h2>Register</h2>
-
-    <div if.bind="error" class="error-text">
-      ${error}
+  <section class="register-page" aria-label="Policy management registration page">
+    <div class="register-hero" aria-hidden="true">
+      <div class="register-brand-mark">PMS</div>
+      <p class="register-eyebrow">Policy access request</p>
+      <h1>Create your policy workspace</h1>
+      <p class="register-hero-text">
+        Set up a secure account for policy submissions, approvals, and operational visibility.
+      </p>
+      <div class="register-highlights">
+        <span>Guided onboarding</span>
+        <span>Role assignment</span>
+        <span>Secure review access</span>
+      </div>
     </div>
 
-    <div if.bind="success" class="success-text">
-      ${success}
+    <div class="register-card">
+      <div class="register-card-header">
+        <div class="register-icon" aria-hidden="true">PMS</div>
+        <p class="register-eyebrow">New policy account</p>
+        <h2>Request access</h2>
+        <p>Enter your profile details to create a policy management account.</p>
+      </div>
+
+      <div if.bind="error" class="register-message register-error" role="alert">
+        ${error}
+      </div>
+
+      <div if.bind="success" class="register-message register-success" role="status">
+        ${success}
+      </div>
+
+      <div class="register-grid">
+        <div class="register-field">
+          <label for="register-name">Full name</label>
+          <div class="register-input-wrap">
+            <input id="register-name" placeholder="Enter full name" value.bind="name" autocomplete="name" />
+          </div>
+        </div>
+
+        <div class="register-field">
+          <label for="register-username">Username</label>
+          <div class="register-input-wrap">
+            <input id="register-username" placeholder="Choose username" value.bind="username" autocomplete="username" />
+          </div>
+        </div>
+      </div>
+
+      <div class="register-field">
+        <label for="register-email">Email address</label>
+        <div class="register-input-wrap">
+          <input id="register-email" type="email" placeholder="name@example.com" value.bind="email" autocomplete="email" />
+        </div>
+      </div>
+
+      <div class="register-grid">
+        <div class="register-field">
+          <label for="register-password">Password</label>
+          <div class="register-input-wrap">
+            <input id="register-password" type="password" placeholder="Create password" value.bind="password" autocomplete="new-password" />
+          </div>
+        </div>
+
+        <div class="register-field">
+          <label for="register-age">Age</label>
+          <div class="register-input-wrap">
+            <input id="register-age" type="number" placeholder="Age" value.bind="age" />
+          </div>
+        </div>
+      </div>
+
+      <div class="register-field">
+        <label for="register-role">Access role</label>
+        <div class="register-input-wrap">
+          <select id="register-role" value.bind="role">
+            <option value="Client">Client</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="button" class="register-btn" click.trigger="register()">
+        <span>Create policy account</span>
+        <span aria-hidden="true">-&gt;</span>
+      </button>
+
+      <div class="login-link">
+        Already have access?
+        <a route-href="route: login">Login</a>
+      </div>
     </div>
-
-    <input placeholder="Name" value.bind="name" />
-
-    <input placeholder="Username" value.bind="username" />
-
-    <input placeholder="Email" value.bind="email" />
-
-    <input type="password" placeholder="Password" value.bind="password" />
-
-    <input type="number" placeholder="Age" value.bind="age" />
-
-    <select value.bind="role">
-      <option value="Client">Client</option>
-      <option value="Admin">Admin</option>
-    </select>
-
-    <button class="register-btn" click.trigger="register()">
-      Register
-    </button>
-
-    <div class="login-link">
-      Already have an account?
-      <a href="#/login">Login</a>
-    </div>
-  </div>
+  </section>
 </template>

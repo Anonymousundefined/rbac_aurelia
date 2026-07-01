@@ -1,25 +1,25 @@
 <template>
-  <section class="login-page" aria-label="Login page">
+  <section class="login-page" aria-label="Policy management login page">
     <div class="login-hero" aria-hidden="true">
-      <div class="login-brand-mark">RB</div>
-      <p class="login-eyebrow">Secure access portal</p>
-      <h1>Welcome back</h1>
+      <div class="login-brand-mark">PMS</div>
+      <p class="login-eyebrow">Policy management system</p>
+      <h1>Control every policy flow</h1>
       <p class="login-hero-text">
-        Sign in to manage roles, permissions, and dashboard insights from one clean workspace.
+        Sign in to review policies, monitor submissions, and keep approval decisions moving from one secure workspace.
       </p>
       <div class="login-highlights">
-        <!-- <span>Role based access</span> -->
-        <span>Protected dashboard</span>
-        <span>Fast administration</span>
+        <span>Policy review</span>
+        <span>Submission tracking</span>
+        <span>Role based control</span>
       </div>
     </div>
 
     <div class="login-card">
       <div class="login-card-header">
-        <div class="login-icon" aria-hidden="true">Lock</div>
-        <p class="login-eyebrow">Aurelia RBAC</p>
-        <h2>Login to your account</h2>
-        <p>Enter your credentials to continue to the dashboard.</p>
+        <div class="login-icon" aria-hidden="true">PMS</div>
+        <p class="login-eyebrow">Secure policy console</p>
+        <h2>Access your workspace</h2>
+        <p>Use your policy management credentials to continue.</p>
       </div>
 
       <div class="login-field">
@@ -39,7 +39,7 @@
       </div>
 
       <button type="button" class="login-button" click.trigger="login()">
-        <span>Login</span>
+        <span>Open policy dashboard</span>
         <span aria-hidden="true">-&gt;</span>
       </button>
 
@@ -48,8 +48,8 @@
       </div>
 
       <div class="login-footer">
-        Don't have an account?
-        <a route-href="route: register">Create one</a>
+        Need policy access?
+        <a route-href="route: register">Request an account</a>
       </div>
     </div>
   </section>
